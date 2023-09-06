@@ -9,6 +9,6 @@ jobs:
       - name: print greeting
         run: |
           echo "Hello World!"
-          cho "Hello World 2!"
+          echo "Hello World 2!"
       - name: print good bye
         run: echo "Good bye!"
