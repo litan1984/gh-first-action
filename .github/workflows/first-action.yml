@@ -14,5 +14,5 @@ jobs:
         run: |
           echo "Hello World!"
           terraform -v
-          $PSVersionTable
+          pwsh --version
         
