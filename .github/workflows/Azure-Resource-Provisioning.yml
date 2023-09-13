@@ -10,8 +10,8 @@ jobs:
         with:
           client-id: '9743cd82-aa09-4cef-94e9-d50bdf246d3b'
           tenant-id: 'bc540cd6-65a2-493d-8ec5-ee06f9bbb60e'
-          subscriptionid: '4b09b3ee-592e-48fd-a985-cb26811b0967'
-          client-secret: '3G88Q~e971mytj2~deQX_4.breNhd50W30lOndd7'
+          subscription-id: '4b09b3ee-592e-48fd-a985-cb26811b0967'
+          creds: '3G88Q~e971mytj2~deQX_4.breNhd50W30lOndd7'
           enable-AzPSSession: true
       - name: 'Terraform Plan'
         uses: ./.github/actions/terraform
