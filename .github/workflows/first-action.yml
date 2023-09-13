@@ -13,6 +13,6 @@ jobs:
       - name: print good bye
         run: |
           echo "Hello World!"
-          echo terraform -v
-          echo $PSVersionTable
+          terraform -v
+          $PSVersionTable
         
