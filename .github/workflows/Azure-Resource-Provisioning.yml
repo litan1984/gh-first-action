@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Terraform Plan'
-        uses: .github/actions/terraform
+        uses: ./.github/actions/terraform
         with:
           working_directory: ${{ github.workspace}}
           tf_directory: ${{ github.workspace}}/Azure.Resources/TF_GitHub
