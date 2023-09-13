@@ -11,4 +11,8 @@ jobs:
           echo "Hello World!"
           echo "Hello World 2!"
       - name: print good bye
-        run: echo "Good bye!"
+        run: |
+          echo "Hello World!"
+          echo terraform -v
+          echo $PSVersionTable
+        
