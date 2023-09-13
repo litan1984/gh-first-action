@@ -29,6 +29,12 @@ runs:
         terraform plan
       shell: bash
       if: inputs.tf_plan == 'true'
-    
+
+    - name: Terraform Apply
+      run: |
+        cd ${{ inputs.tf_directory }}
+        terraform apply
+      shell: bash
+      if: inputs.tf_apply == 'true'
         
   

@@ -27,6 +27,13 @@ jobs:
           tf_directory: ${{ github.workspace}}/Azure.Resources/TF_GitHub
           tf_plan: true
           tf_apply: false
-      
+
+      - name: 'Terraform Plan'
+        uses: ./.github/actions/terraform
+        with:
+          working_directory: ${{ github.workspace}}
+          tf_directory: ${{ github.workspace}}/Azure.Resources/TF_GitHub
+          tf_plan: false
+          tf_apply: true
 
         
