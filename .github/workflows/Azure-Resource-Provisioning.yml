@@ -5,13 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: 'Terraform Plan'
-        uses: ./.github/actions/terraform
-        with:
-          working_directory: ${{ github.workspace}}
-          tf_directory: ${{ github.workspace}}/Azure.Resources/TF_GitHub
-          tf_plan: true
-          tf_apply: false
       - name: 'Azure Login'
         uses: azure/login@v1
         with:
@@ -20,5 +13,13 @@ jobs:
           subscriptionid: '4b09b3ee-592e-48fd-a985-cb26811b0967'
           client-secret: '3G88Q~e971mytj2~deQX_4.breNhd50W30lOndd7'
           enable-AzPSSession: true
+      - name: 'Terraform Plan'
+        uses: ./.github/actions/terraform
+        with:
+          working_directory: ${{ github.workspace}}
+          tf_directory: ${{ github.workspace}}/Azure.Resources/TF_GitHub
+          tf_plan: true
+          tf_apply: false
+      
 
         
