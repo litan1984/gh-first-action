@@ -33,7 +33,7 @@ runs:
     - name: Terraform Apply
       run: |
         cd ${{ inputs.tf_directory }}
-        terraform apply
+        terraform apply -auto-approve
       shell: bash
       if: inputs.tf_apply == 'true'
         

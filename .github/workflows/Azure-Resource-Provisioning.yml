@@ -28,7 +28,7 @@ jobs:
           tf_plan: true
           tf_apply: false
 
-      - name: 'Terraform Plan'
+      - name: 'Terraform Apply'
         uses: ./.github/actions/terraform
         with:
           working_directory: ${{ github.workspace}}
