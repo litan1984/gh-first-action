@@ -1,7 +1,7 @@
 name: Deploy Azure Resource
 on: workflow_dispatch
 jobs:
-  first_job:
+  terraform_plan:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

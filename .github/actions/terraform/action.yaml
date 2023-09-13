@@ -20,7 +20,7 @@ runs:
     - name: Terraform Init
       run: |
         cd ${{ inputs.tf_directory }}
-        terraform Init
+        terraform init
       shell: bash
 
         
