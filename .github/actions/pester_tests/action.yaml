@@ -12,7 +12,5 @@ runs:
         Invoke-Pester `
           -Script @{
             Path = "./s/Terraform/Azure.Resources/Tests/Verify-resource-group.Tests.ps1"
-            Parameters = @{
-            }
           }
       shell: pwsh
