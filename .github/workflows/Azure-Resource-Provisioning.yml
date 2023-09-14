@@ -39,14 +39,7 @@ jobs:
   pester_tests:
     runs-on: ubuntu-latest
     needs: terraform_plan
-    steps:
-      - name: GitHub app token generation
-        id: my-app
-        uses: getsentry/action-github-app-token@v2
-        with:
-          app_id: "390013"
-          private_key: "714e767feb0258c516a4d0f56282aad234a1e0b7"
-
+    steps:   
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:

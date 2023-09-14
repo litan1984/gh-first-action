@@ -18,4 +18,5 @@ runs:
         # include_paths: ./s/Terraform/Azure.Resources/Test/Verify-resource-group.Tests.ps1
         report_name: module_tests
         report_title: My Module Tests
+        github_token: "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"
         
