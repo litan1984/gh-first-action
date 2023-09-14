@@ -5,6 +5,7 @@ runs:
   steps:
     - name: Run Pester Tests
       run: |
+        Wrire-Output "Test"
         Wrire-Output "${{ github.workspace }}/Azure.Resources/Tests/Verify-resource-group.Tests.ps1"
         Invoke-Pester `
           -Script @{
