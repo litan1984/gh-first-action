@@ -15,7 +15,7 @@ runs:
       id: test_module
       uses: zyborg/pester-tests-report@v1
       with:
-        include_paths: ./s/Terraform/Azure.Resources/Test
+        include_paths: ./s/Terraform/Azure.Resources/Test/Verify-resource-group.Tests.ps1
         report_name: module_tests
         report_title: My Module Tests
         
