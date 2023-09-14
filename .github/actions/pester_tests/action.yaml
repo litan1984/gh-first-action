@@ -7,8 +7,8 @@ runs:
       run: |
         Invoke-Pester `
           -Script @{
-            Path = "${{ github.workspace}}/Azure.Resources/Tests/Verify-resource-group-test.ps1"
+            Path = "${{ github.workspace}}/Azure.Resources/Tests/Verify-resource-group.Tests.ps1"
             Parameters = @{
             }
-          } `
+          }
       shell: pwsh
