@@ -18,5 +18,6 @@ runs:
         # include_paths: ./s/Terraform/Azure.Resources/Test/Verify-resource-group.Tests.ps1
         report_name: module_tests
         report_title: My Module Tests
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ github.token }}
+        
         
