@@ -9,8 +9,5 @@ runs:
   steps:
     - name: Run Pester Tests
       run: |
-        Invoke-Pester `
-          -Script @{
-            Path = "./s/Terraform/Azure.Resources/Tests/Verify-resource-group.Tests.ps1"
-          }
+        Invoke-Pester -Path "./s/Terraform/Azure.Resources/Tests*"
       shell: pwsh
