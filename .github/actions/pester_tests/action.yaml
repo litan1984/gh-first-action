@@ -5,9 +5,10 @@ runs:
   steps:
     - name: Run Pester Tests
       run: |
+        Wrire-Output "${{ github.workspace }}/Azure.Resources/Tests/Verify-resource-group.Tests.ps1"
         Invoke-Pester `
           -Script @{
-            Path = "${{ github.workspace}}/Azure.Resources/Tests/Verify-resource-group.Tests.ps1"
+            Path = "${{ github.workspace }}/Azure.Resources/Tests/Verify-resource-group.Tests.ps1"
             Parameters = @{
             }
           }
