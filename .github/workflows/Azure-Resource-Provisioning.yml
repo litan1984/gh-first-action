@@ -40,16 +40,19 @@ jobs:
     runs-on: ubuntu-latest
     needs: terraform_plan
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          path: s/Terraform
       - name: 'Azure Login'
         uses: azure/login@v1
         with:
           creds: '${{ secrets.AZURE_CREDENTIALS }}'
           enable-AzPSSession: true
       - name: 'Pester Tests'
-        uses: ./.github/actions/pester_tests
+        uses: ./s/Terraform/.github/actions/pester_tests
         with:
-          working_directory: ${{ github.workspace }}
+          working_directory: s/Terraform
         
         
         
