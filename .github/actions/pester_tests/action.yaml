@@ -1,0 +1,14 @@
+name: 'Pester Tests'
+description: This task to verify Azure resources using PowerShell Pester
+runs:
+  using: "composite"
+  steps:
+    - name: Run Pester Tests
+      run: |
+        Invoke-Pester `
+          -Script @{
+            Path = "${{ github.workspace}}/Azure.Resources/Tests/Verify-resource-group-test.ps1"
+            Parameters = @{
+            }
+          } `
+      shell: pwsh

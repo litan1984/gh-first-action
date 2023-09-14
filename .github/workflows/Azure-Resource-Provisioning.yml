@@ -35,5 +35,16 @@ jobs:
           tf_directory: ${{ github.workspace}}/Azure.Resources/TF_GitHub
           tf_plan: false
           tf_apply: true
-
+   
+  pester_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: 'Azure Login'
+        uses: azure/login@v1
+        with:
+          creds: '${{ secrets.AZURE_CREDENTIALS }}'
+          enable-AzPSSession: true
+      - name: 'Pester Tests'
+        uses: ./.github/actions/pester_tests
         
