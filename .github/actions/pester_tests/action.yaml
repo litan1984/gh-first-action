@@ -1,5 +1,9 @@
 name: 'Pester Tests'
 description: This task to verify Azure resources using PowerShell Pester
+inputs:
+  working_directory:
+    description: 'Path to the working directory'
+    required: true
 runs:
   using: "composite"
   steps:
@@ -7,7 +11,7 @@ runs:
       run: |
         Invoke-Pester `
           -Script @{
-            Path = "./Azure.Resources/Tests/Verify-resource-group.Tests.ps1"
+            Path = "${{ inputs.working_directory }}/Azure.Resources/Tests/Verify-resource-group.Tests.ps1"
             Parameters = @{
             }
           }

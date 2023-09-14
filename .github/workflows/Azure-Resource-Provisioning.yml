@@ -31,7 +31,7 @@ jobs:
       - name: 'Terraform Apply'
         uses: ./.github/actions/terraform
         with:
-          working_directory: ${{ github.workspace}}
+          working_directory: ${{ github.workspace }}
           tf_directory: ${{ github.workspace}}/Azure.Resources/TF_GitHub
           tf_plan: false
           tf_apply: true
@@ -48,4 +48,8 @@ jobs:
           enable-AzPSSession: true
       - name: 'Pester Tests'
         uses: ./.github/actions/pester_tests
+        with:
+          working_directory: ${{ github.workspace }}
+        
+        
         
