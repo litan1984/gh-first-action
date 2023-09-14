@@ -7,7 +7,15 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Run Pester Tests
-      run: |
-        Invoke-Pester -Path "./s/Terraform/Azure.Resources/Tests*" -OutputFile "./s/Terraform/Azure.Resources/Test_Report.xml"
-      shell: pwsh
+    # - name: Run Pester Tests
+    #   run: |
+    #     Invoke-Pester -Path "./s/Terraform/Azure.Resources/Tests*" -OutputFile "./s/Terraform/Azure.Resources/Test_Report.xml"
+    #   shell: pwsh
+    - name: test module
+      id: test_module
+      uses: zyborg/pester-tests-report@v1
+      with:
+        include_paths: ./s/Terraform/Azure.Resources/Test
+        report_name: module_tests
+        report_title: My Module Tests
+        
