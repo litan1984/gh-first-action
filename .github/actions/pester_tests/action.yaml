@@ -8,11 +8,17 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Run Pester Tests
-      continue-on-error: true
-      run: |
-        Invoke-Pester -Path "./s/Terraform/Azure.Resources/Test" -OutputFile "./s/Terraform/Azure.Resources/Test_Report.xml" 
-      shell: pwsh
+    # - name: Run Pester Tests
+    #   continue-on-error: true
+    #   run: |
+    #     Invoke-Pester -Path "./s/Terraform/Azure.Resources/Test" -OutputFile "./s/Terraform/Azure.Resources/Test_Report.xml" 
+    #   shell: pwsh
+    - name: Azure PowerShell Action
+      uses: Azure/powershell@v1
+      with:
+        inlineScript: |
+          Invoke-Pester -Path "./s/Terraform/Azure.Resources/Test" -OutputFile "./s/Terraform/Azure.Resources/Test_Report.xml" 
+        azPSVersion: "latest"
     # - name: Convert XML to HTML
     #   run: |
     #     ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe -OutputFile ./s/Terraform/Azure.Resources/Test_Report.xml ./s/Terraform/Azure.Resources/HTML_Reports/

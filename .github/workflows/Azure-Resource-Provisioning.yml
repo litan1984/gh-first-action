@@ -54,7 +54,6 @@ jobs:
           Install-Module -Name Az -Force -Scope CurrentUser
         shell: pwsh
       - name: 'Pester Tests'
-
         uses: ./s/Terraform/.github/actions/pester_tests
         with:
           working_directory: s/Terraform
