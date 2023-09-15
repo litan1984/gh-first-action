@@ -34,7 +34,7 @@ runs:
         tenant-id: ${{ inputs.tenant_id }}
         subscription-id: ${{ inputs.subscription_id }}
         enable-AzPSSession: true
-
+        
     - name: Azure PowerShell Action
       uses: Azure/powershell@v1
       with:
