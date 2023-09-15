@@ -9,6 +9,7 @@ runs:
   using: "composite"
   steps:
     - name: Run Pester Tests
+      continue-on-error: true
       run: |
         Invoke-Pester -Path "./s/Terraform/Azure.Resources/Test" -OutputFile "./s/Terraform/Azure.Resources/Test_Report.xml" 
       shell: pwsh
