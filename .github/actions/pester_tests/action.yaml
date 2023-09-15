@@ -20,7 +20,7 @@ runs:
 
     - name: Upload Artifacts
       working-directory: ./s/Terraform/Azure.Resources
-      uses: action/upload-artifact@v3
+      uses: action/upload-artifact@v1
       with:
         name: HTML_Report
         path: Test_Report.xml
