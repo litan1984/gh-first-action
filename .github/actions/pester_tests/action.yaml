@@ -17,11 +17,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    # - name: Run Pester Tests
-    #   continue-on-error: true
-    #   run: |
-    #     Invoke-Pester -Path "./s/Terraform/Azure.Resources/Test" -OutputFile "./s/Terraform/Azure.Resources/Test_Report.xml" 
-    #   shell: pwsh
     - name: Azure account list
       run: |
         az account list
@@ -38,6 +33,7 @@ runs:
         
     - name: Azure PowerShell Action
       uses: Azure/powershell@v1
+      continue-on-error: true
       with:
         inlineScript: |
           Invoke-Pester -Path "./s/Terraform/Azure.Resources/Test" -OutputFile "./s/Terraform/Azure.Resources/Test_Report.xml" 
@@ -47,9 +43,8 @@ runs:
     #     ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe -OutputFile ./s/Terraform/Azure.Resources/Test_Report.xml ./s/Terraform/Azure.Resources/HTML_Reports/
     #   shell: bash
 
-    # - name: Upload Artifacts
-    #   if: ${{ failure() }}
-    #   uses: action/upload-artifact@v3
-    #   with:
-    #     name: HTML_Report
-    #     path: ./s/Terraform/Azure.Resources/Test_Report.xml
+    - name: Upload Artifacts
+      uses: action/upload-artifact@v3
+      with:
+        name: HTML_Report
+        path: ./s/Terraform/Azure.Resources/Test_Report.xml
