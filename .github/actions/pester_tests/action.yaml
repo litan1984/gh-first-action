@@ -7,17 +7,16 @@ inputs:
 runs:
   using: "composite"
   steps:
-    # - name: Run Pester Tests
-    #   run: |
-    #     Invoke-Pester -Path "./s/Terraform/Azure.Resources/Tests*" -OutputFile "./s/Terraform/Azure.Resources/Test_Report.xml"
-    #   shell: pwsh
-    - name: test module
-      id: test_module
-      uses: zyborg/pester-tests-report@v1
+    - name: Run Pester Tests
+      run: |
+        Invoke-Pester -Path "./s/Terraform/Azure.Resources/Tests*" -OutputFile "./s/Terraform/Azure.Resources/Test_Report.xml"
+      shell: pwsh
+    - name: Convert XML to HTML
+      run: |
+        ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe -OutputFile ./s/Terraform/Azure.Resources/Test_Report.xml ./s/Terraform/Azure.Resources/HTML_Reports/
+      shell: bash
+    - name: Upload Artifacts
+      uses: action/upload-artifact@v3
       with:
-        # include_paths: ./s/Terraform/Azure.Resources/Test/Verify-resource-group.Tests.ps1
-        report_name: module_tests
-        report_title: My Module Tests
-        github_token: ${{ github.token }}
-        
-        
+        name: HTML_Report
+        path: ./s/Terraform/Azure.Resources/HTML_Reports/**
