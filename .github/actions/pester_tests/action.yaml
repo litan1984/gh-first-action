@@ -4,7 +4,16 @@ inputs:
   working_directory:
     description: 'Path to the working directory'
     required: true
-    default: test
+  client_id:
+    description: 'test'
+    required: true
+  subscription_id:
+    description: 'test'
+    required: true
+  tenant_id:
+    description: 'test'
+    required: true
+
 runs:
   using: "composite"
   steps:
@@ -14,15 +23,11 @@ runs:
     #     Invoke-Pester -Path "./s/Terraform/Azure.Resources/Test" -OutputFile "./s/Terraform/Azure.Resources/Test_Report.xml" 
     #   shell: pwsh
     - name: 'Azure Login'
-        # uses: azure/login@v1
-        # with:
-        #   creds: '${{ secrets.AZURE_CREDENTIALS }}'
-        #   enable-AzPSSession: true
       uses: azure/login@v1
       with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        client-id: ${{ input.client_id }}
+        tenant-id: ${{ input.tenant_id }}
+        subscription-id: ${{ input.subscription_id }}
         enable-AzPSSession: true
 
     - name: Azure PowerShell Action
