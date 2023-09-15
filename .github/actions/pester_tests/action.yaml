@@ -14,11 +14,17 @@ runs:
     #     Invoke-Pester -Path "./s/Terraform/Azure.Resources/Test" -OutputFile "./s/Terraform/Azure.Resources/Test_Report.xml" 
     #   shell: pwsh
     - name: 'Azure Login'
+        # uses: azure/login@v1
+        # with:
+        #   creds: '${{ secrets.AZURE_CREDENTIALS }}'
+        #   enable-AzPSSession: true
       uses: azure/login@v1
       with:
-        creds: '${{ secrets.AZURE_CREDENTIALS }}'
-        enable-AzPSSession: true
-
+        client-id: '9743cd82-aa09-4cef-94e9-d50bdf246d3b'
+        tenant-id: 'bc540cd6-65a2-493d-8ec5-ee06f9bbb60e'
+        subscription-id: '4b09b3ee-592e-48fd-a985-cb26811b0967'
+        client-secret: '3G88Q~e971mytj2~deQX_4.breNhd50W30lOndd7'
+        
     - name: Azure PowerShell Action
       uses: Azure/powershell@v1
       with:
