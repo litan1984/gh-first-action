@@ -18,7 +18,11 @@ jobs:
           # subscription-id: '4b09b3ee-592e-48fd-a985-cb26811b0967'
           # creds: '3G88Q~e971mytj2~deQX_4.breNhd50W30lOndd7'
           # creds: '{"clientId":"${{ secrets.CLIENT_ID }}","clientSecret":"${{ secrets.CLIENT_SECRET }}","subscriptionId":"${{ secrets.SUBSCRIPTION_ID }}","tenantId":"${{ secrets.TENANT_ID }}"}'
-          creds: '${{ secrets.AZURE_CREDENTIALS }}'
+          # creds: '${{ secrets.AZURE_CREDENTIALS }}'
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
           enable-AzPSSession: true
       - name: 'Terraform Plan'
         uses: ./.github/actions/terraform
@@ -60,3 +64,4 @@ jobs:
         
         
         
+
