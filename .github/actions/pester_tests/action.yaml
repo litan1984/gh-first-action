@@ -18,9 +18,9 @@ runs:
     #     ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe -OutputFile ./s/Terraform/Azure.Resources/Test_Report.xml ./s/Terraform/Azure.Resources/HTML_Reports/
     #   shell: bash
 
-    - name: Upload Artifacts
-      if: ${{ failure() }}
-      uses: action/upload-artifact@v3
-      with:
-        name: HTML_Report
-        path: ./s/Terraform/Azure.Resources/Test_Report.xml
+    # - name: Upload Artifacts
+    #   if: ${{ failure() }}
+    #   uses: action/upload-artifact@v3
+    #   with:
+    #     name: HTML_Report
+    #     path: ./s/Terraform/Azure.Resources/Test_Report.xml
