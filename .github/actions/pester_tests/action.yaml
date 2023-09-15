@@ -4,17 +4,19 @@ inputs:
   working_directory:
     description: 'Path to the working directory'
     required: true
+    default: test
 runs:
   using: "composite"
   steps:
     - name: Run Pester Tests
       run: |
-        Invoke-Pester -Path "./s/Terraform/Azure.Resources/Tests" -OutputFile "./s/Terraform/Azure.Resources/Test_Report.xml"
+        Invoke-Pester -Path "./s/Terraform/Azure.Resources/Test" -OutputFile "./s/Terraform/Azure.Resources/Test_Report.xml" 
       shell: pwsh
     - name: Convert XML to HTML
       run: |
         ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe -OutputFile ./s/Terraform/Azure.Resources/Test_Report.xml ./s/Terraform/Azure.Resources/HTML_Reports/
       shell: bash
+
     # - name: Upload Artifacts
     #   uses: action/upload-artifact@v3
     #   with:
