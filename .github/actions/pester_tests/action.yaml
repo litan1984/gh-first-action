@@ -42,13 +42,15 @@ runs:
     - name: Convert XML to HTML
       run: |
         ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe ./s/Terraform/Azure.Resources/Test_Report.xml ./s/Terraform/Azure.Resources/HTML_Reports/
+        cd ./s/Terraform/Azure.Resources/
+        la -al
       shell: bash
 
-    - name: Upload Artifacts
-      uses: action/upload-artifact@v3
-      with:
-        name: HTML_Report
-        path: ./Azure.Resources/Test_Report.xml
+    # - name: Upload Artifacts
+    #   uses: action/upload-artifact@v3
+    #   with:
+    #     name: HTML_Report
+    #     path: ./Azure.Resources/Test_Report.xml
 
 # Invoke-Pester -Path "Azure.Resources/Test" -OutputFile "Azure.Resources/Test/Test_Report.xml" -OutputFormat NUnitXML
 
