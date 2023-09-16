@@ -41,7 +41,7 @@ runs:
         
     - name: Convert XML to HTML
       run: |
-        ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe ./s/Terraform/Azure.Resources/Test_Report.xml ./s/Terraform/Azure.Resources/HTML_Reports/
+        ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe ./s/Terraform/Azure.Resources/Test/Test_Report.xml ./s/Terraform/Azure.Resources/HTML_Reports/
         cd ./s/Terraform/Azure.Resources/
         ls -al
         cd ..
