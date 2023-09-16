@@ -13,6 +13,9 @@ inputs:
   tenant_id:
     description: 'test'
     required: true
+  gh_secrets:
+    description: 'test'
+    required: true
 
 runs:
   using: "composite"
@@ -44,6 +47,7 @@ runs:
         ls -al
         ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe ./s/Terraform/Azure.Resources/HTML_Reports ./s/Terraform/Azure.Resources/HTML_Reports/
         cd ./s/Terraform/Azure.Resources/HTML_Reports/
+        ${{ inputs.gh_secrets }}
         ls -al
       shell: bash
 
@@ -54,7 +58,7 @@ runs:
         include_paths: ./s/Terraform/Azure.Resources/Test
         report_name: module_tests
         report_title: My Module Tests
-        # github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ inputs.gh_secrets }}
 
     - name: dump test results
       shell: pwsh
