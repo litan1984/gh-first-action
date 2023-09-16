@@ -61,7 +61,10 @@ jobs:
         uses: ./s/Terraform/.github/actions/pester_tests
         with:
           working_directory: s/Terraform
-        
+          client_id: ${{ secrets.AZURE_CLIENT_ID }}
+          subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          tenant_id: ${{ secrets.AZURE_TENANT_ID }}
+            
         
         
 

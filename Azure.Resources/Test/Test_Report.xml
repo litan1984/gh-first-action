@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2023-09-15" time="22:02:14">
+  <environment clr-version="7.0.9" platform="Darwin" user-domain="" user="litanbehera" cwd="/Users/litanbehera/Documents/Projects/gh-first-action" nunit-version="2.5.8.0" machine-name="Litans-MacBook-Air.local" os-version="22.6.0" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="TestFixture" name="Pester" executed="True" result="Success" success="True" time="0.4895" asserts="0" description="Pester">
+    <results>
+      <test-suite type="TestFixture" name="/Users/litanbehera/Documents/Projects/gh-first-action/Azure.Resources/Test/Verify-resource-group.Tests.ps1" executed="True" result="Success" success="True" time="0.4895" asserts="0" description="/Users/litanbehera/Documents/Projects/gh-first-action/Azure.Resources/Test/Verify-resource-group.Tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="Azure resources" executed="True" result="Success" success="True" time="0.4769" asserts="0" description="Azure resources">
+            <results>
+              <test-suite type="TestFixture" name="Azure resources.Azure resource group" executed="True" result="Success" success="True" time="0.4747" asserts="0" description="Azure resources.Azure resource group">
+                <results>
+                  <test-case description="Verify resource group" name="Azure resources.Azure resource group.Verify resource group" time="0.4726" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
