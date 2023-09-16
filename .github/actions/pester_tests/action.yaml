@@ -54,7 +54,7 @@ runs:
         include_paths: ./s/Terraform/Azure.Resources/Test
         report_name: module_tests
         report_title: My Module Tests
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        # github_token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: dump test results
       shell: pwsh
