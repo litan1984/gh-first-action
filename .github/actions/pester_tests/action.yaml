@@ -43,7 +43,8 @@ runs:
       run: |
         ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe ./s/Terraform/Azure.Resources/Test_Report.xml ./s/Terraform/Azure.Resources/HTML_Reports/
         cd ./s/Terraform/Azure.Resources/
-        la -al
+        ls -al
+        cd ..
       shell: bash
 
     # - name: Upload Artifacts
