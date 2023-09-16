@@ -47,11 +47,11 @@ runs:
         ls -al
       shell: bash
 
-    - name: Upload Artifacts
-      uses: action/upload-artifact@v3
-      with:
-        name: HTML_Report
-        path: ./s/Terraform/Azure.Resources/HTML_Reports
+    # - name: Upload Artifacts
+    #   uses: action/upload-artifact@v3
+    #   with:
+    #     name: HTML_Report
+    #     path: ./s/Terraform/Azure.Resources/HTML_Reports
 
 # Invoke-Pester -Path "Azure.Resources/Test" -OutputFile "Azure.Resources/Test/Test_Report.xml" -OutputFormat NUnitXML
 
