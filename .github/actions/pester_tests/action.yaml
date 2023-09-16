@@ -48,7 +48,7 @@ runs:
       uses: action/upload-artifact@v3
       with:
         name: HTML_Report
-        path: ./s/Terraform/Azure.Resources/Test_Report.xml
+        path: ./Azure.Resources/Test_Report.xml
 
 # Invoke-Pester -Path "Azure.Resources/Test" -OutputFile "Azure.Resources/Test/Test_Report.xml" -OutputFormat NUnitXML
 
