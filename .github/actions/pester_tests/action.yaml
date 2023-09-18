@@ -46,7 +46,7 @@ runs:
     - name: Convert XML to HTML
       run: |
         ls -al
-        sudo apt-get install wine
+        sudo apt-get install libwine
         wine ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe ./s/Terraform/Azure.Resources/HTML_Reports ./s/Terraform/Azure.Resources/HTML_Reports/
         cd ./s/Terraform/Azure.Resources/HTML_Reports/
         ls -al
