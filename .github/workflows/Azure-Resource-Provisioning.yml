@@ -4,6 +4,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: write
 jobs:
   terraform_plan:
     runs-on: ubuntu-latest
@@ -64,6 +65,7 @@ jobs:
           client_id: ${{ secrets.AZURE_CLIENT_ID }}
           subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           tenant_id: ${{ secrets.AZURE_TENANT_ID }}
+          gh_secrets: ${{ secrets.GITHUB_TOKEN }}
             
         
         

@@ -24,6 +24,7 @@ runs:
       run: |
         az account list
         az group list
+        Write-Host "Github secret is ${{ inputs.gh_secrets }}"
       shell: bash
 
     - name: 'Azure Login'
@@ -40,12 +41,14 @@ runs:
       with:
         inlineScript: |
           Invoke-Pester -Path "./s/Terraform/Azure.Resources/Test" -OutputFile "./s/Terraform/Azure.Resources/HTML_Reports/Test_Report.xml" -OutputFormat NUnitXML
+          
         azPSVersion: "latest"
         
     - name: Convert XML to HTML
       run: |
         ls -al
-        ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe ./s/Terraform/Azure.Resources/HTML_Reports ./s/Terraform/Azure.Resources/HTML_Reports/
+        sudo apt install wine32
+        wine ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe ./s/Terraform/Azure.Resources/HTML_Reports ./s/Terraform/Azure.Resources/HTML_Reports/
         cd ./s/Terraform/Azure.Resources/HTML_Reports/
         ${{ inputs.gh_secrets }}
         ls -al
