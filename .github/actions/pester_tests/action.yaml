@@ -51,7 +51,7 @@ runs:
         cd ./s/Terraform/Azure.Resources/HTML_Reports/
         ls -al
         ls -al
-      shell: pw
+      shell: bash
 
     # - name: test module
     #   id: test_module
