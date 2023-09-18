@@ -44,6 +44,7 @@ runs:
         azPSVersion: "latest"
         
     - name: Convert XML to HTML
+      continue-on-error: true
       run: |
         ls -al
         sudo apt-get install libwine
