@@ -24,7 +24,6 @@ runs:
       run: |
         az account list
         az group list
-        Write-Host "Github secret is ${{ inputs.gh_secrets }}"
       shell: bash
 
     - name: 'Azure Login'
