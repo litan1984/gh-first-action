@@ -47,11 +47,11 @@ runs:
       continue-on-error: true
       run: |
         ls -al
-        sudo apt-get install libwine
-        wine ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe ./s/Terraform/Azure.Resources/HTML_Reports ./s/Terraform/Azure.Resources/HTML_Reports/
+        ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe ./s/Terraform/Azure.Resources/HTML_Reports ./s/Terraform/Azure.Resources/HTML_Reports/
         cd ./s/Terraform/Azure.Resources/HTML_Reports/
         ls -al
-      shell: bash
+        ls -al
+      shell: pw
 
     # - name: test module
     #   id: test_module
