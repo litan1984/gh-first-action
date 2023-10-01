@@ -29,7 +29,7 @@ resource "azurerm_resource_group" "my_demo_rg1" {
 }
 
 resource "azurerm_container_registry" "acr" {
-  name                = "containerRegistry1"
+  name                = "azcr25041984"
   resource_group_name = azurerm_resource_group.my_demo_rg1.name
   location            = azurerm_resource_group.my_demo_rg1.location
   sku                 = "Premium"
