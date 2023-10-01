@@ -66,6 +66,4 @@ jobs:
           tenant_id: ${{ secrets.AZURE_TENANT_ID }}
           gh_secrets: ${{ secrets.GITHUB_TOKEN }}
             
-        
-        
-
+      
