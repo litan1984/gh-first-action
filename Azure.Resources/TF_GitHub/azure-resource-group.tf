@@ -28,3 +28,20 @@ resource "azurerm_resource_group" "my_demo_rg1" {
   name = "my-demo-rg1"  
 }
 
+resource "azurerm_container_registry" "acr" {
+  name                = "containerRegistry1"
+  resource_group_name = azurerm_resource_group.my_demo_rg1.name
+  location            = azurerm_resource_group.my_demo_rg1.location
+  sku                 = "Premium"
+  admin_enabled       = false
+  georeplications {
+    location                = "East US"
+    zone_redundancy_enabled = true
+    tags                    = {}
+  }
+  georeplications {
+    location                = "North Europe"
+    zone_redundancy_enabled = true
+    tags                    = {}
+  }
+}
