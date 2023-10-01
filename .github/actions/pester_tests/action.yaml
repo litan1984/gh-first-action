@@ -13,6 +13,9 @@ inputs:
   tenant_id:
     description: 'test'
     required: true
+  gh_secrets:
+    description: 'test'
+    required: true
 
 runs:
   using: "composite"
@@ -37,21 +40,40 @@ runs:
       with:
         inlineScript: |
           Invoke-Pester -Path "./s/Terraform/Azure.Resources/Test" -OutputFile "./s/Terraform/Azure.Resources/HTML_Reports/Test_Report.xml" -OutputFormat NUnitXML
+          
         azPSVersion: "latest"
         
     - name: Convert XML to HTML
+      continue-on-error: true
       run: |
         ls -al
         ./s/Terraform/Azure.Resources/Tools/ReportUnit.exe ./s/Terraform/Azure.Resources/HTML_Reports ./s/Terraform/Azure.Resources/HTML_Reports/
         cd ./s/Terraform/Azure.Resources/HTML_Reports/
         ls -al
+        ls -al
       shell: bash
 
-    - name: Upload Artifacts
-      uses: action/upload-artifact@v3
-      with:
-        name: HTML_Report
-        path: ./s/Terraform/Azure.Resources/HTML_Reports
+    # - name: test module
+    #   id: test_module
+    #   uses: zyborg/pester-tests-report@v1
+    #   with:
+    #     include_paths: ./s/Terraform/Azure.Resources/Test
+    #     report_name: module_tests
+    #     report_title: My Module Tests
+    #     github_token: ${{ inputs.gh_secrets }}
+
+    # - name: dump test results
+    #   shell: pwsh
+    #   run: |
+    #     Write-Host 'Total Tests Executed...:  ${{ steps.test_module.outputs.total_count }}'
+    #     Write-Host 'Total Tests PASSED.....:  ${{ steps.test_module.outputs.passed_count }}'
+    #     Write-Host 'Total Tests FAILED.....:  ${{ steps.test_module.outputs.failed_count }}'
+
+    # - name: Upload Artifacts
+    #   uses: action/upload-artifact@v3
+    #   with:
+    #     name: HTML_Report
+    #     path: ./s/Terraform/Azure.Resources/HTML_Reports
 
 # Invoke-Pester -Path "Azure.Resources/Test" -OutputFile "Azure.Resources/Test/Test_Report.xml" -OutputFormat NUnitXML
 

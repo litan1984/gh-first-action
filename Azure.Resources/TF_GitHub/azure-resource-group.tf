@@ -28,3 +28,15 @@ resource "azurerm_resource_group" "my_demo_rg1" {
   name = "my-demo-rg1"  
 }
 
+resource "azurerm_container_registry" "acr" {
+  name                = "azcr25041984"
+  resource_group_name = azurerm_resource_group.my_demo_rg1.name
+  location            = azurerm_resource_group.my_demo_rg1.location
+  sku                 = "Premium"
+  admin_enabled       = false 
+}
+resource "azurerm_role_assignment" "spnpush" {
+  role_definition_name = "acrpush"
+  scope = azurerm_container_registry.acr.id
+  principal_id = "703e37c7-1fc9-4fa7-b89f-9b18cb07a567"
+}
