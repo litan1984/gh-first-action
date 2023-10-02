@@ -13,7 +13,7 @@ resource "azurerm_resource_group" "my_demo_rg2" {
 
 
 resource "azurerm_storage_account" "tfstate" {
-  name = "asa${randum_string.myrandom.id}"
+  name = "asa${random_string.myrandom.id}"
   resource_group_name = azurerm_resource_group.my_demo_rg1.name
   location = azurerm_resource_group.my_demo_rg1.location
   access_tier = "Standard"
@@ -22,7 +22,6 @@ resource "azurerm_storage_account" "tfstate" {
   tags = {
     environment = "staging"
   }
-  depends_on = [ random_string.myrandom ]
 }
 
 resource "azurerm_storage_container" "tfstate" {
