@@ -29,4 +29,5 @@ provider "azurerm" {
 provider "azurerm" {
     features {}
     alias = "provider2-westus"
+    skip_provider_registration = false
 }
