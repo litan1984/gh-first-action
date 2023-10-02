@@ -7,7 +7,7 @@
 
 resource "azurerm_resource_group" "my_demo_rg2" {
   location = "westus"
-  name = "my-demo-rg2"
+  name = "my-demo-rg3"
   provider = azurerm.provider2-westus
   }
 
