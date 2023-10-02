@@ -11,6 +11,11 @@ resource "azurerm_resource_group" "my_demo_rg2" {
   provider = azurerm.provider2-westus
   }
 
+resource "azurerm_resource_group" "my_demo_rg3" {
+  location = "westus"
+  name = "my-demo-${random_string.myrandom.id}"
+  provider = azurerm.provider2-westus
+  }
 
 # resource "azurerm_storage_account" "tfstate" {
 #   name = "asa${random_string.myrandom.id}"
