@@ -22,6 +22,7 @@ resource "azurerm_storage_account" "tfstate" {
   tags = {
     environment = "staging"
   }
+  depends_on = [ random_string.myrandom ]
 }
 
 resource "azurerm_storage_container" "tfstate" {
