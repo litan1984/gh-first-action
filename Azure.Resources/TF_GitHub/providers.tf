@@ -15,7 +15,10 @@ terraform {
     resource_group_name = "my-demo-rg1"
     storage_account_name = "asa3u1p2avv67"
     container_name = "tfstate"
-    key = "dev.tfstate"
+    key = "dev.terraform.tfstate"
+    use_oidc = true
+    subscription_id = "4b09b3ee-592e-48fd-a985-cb26811b0967"
+    tenant_id = "bc540cd6-65a2-493d-8ec5-ee06f9bbb60e"
   }
 }
 
