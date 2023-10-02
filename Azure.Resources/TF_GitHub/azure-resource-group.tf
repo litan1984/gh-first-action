@@ -14,7 +14,7 @@ resource "azurerm_container_registry" "acr" {
 
 resource "azurerm_resource_group" "my_demo_rg2" {
   location = "westus"
-  name = myrandom
+  name = "my-demo-rg1"
   provider = azurerm.provider2-westus
   }
 
