@@ -6,6 +6,10 @@ terraform {
       source = "hashicorp/azurerm"
       version = "~>3.50.0" # Optional but recommended in production
     }    
+    random = {
+    source = "hashicorp/random"
+    version = "3.5.1"
+    } 
   }
 }
 
@@ -31,3 +35,4 @@ provider "azurerm" {
     alias = "provider2-westus"
     skip_provider_registration = false
 }
+
