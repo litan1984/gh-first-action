@@ -11,7 +11,11 @@ terraform {
 
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
-  features {}
+  features {
+    virtual_machine {
+      delete_os_disk_on_deletion = false
+    }
+  }
   # subscription_id = "4b09b3ee-592e-48fd-a985-cb26811b0967"
   # client_id       = "d8c4b7d6-eeb9-444e-b711-aa37d84b89ea"
   # client_secret   = "yUg8Q~P~JF_DAO5oU~BEaTmyBRWT~pOUlKeAAaqZ"
