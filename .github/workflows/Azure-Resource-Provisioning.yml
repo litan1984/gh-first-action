@@ -33,6 +33,7 @@ jobs:
           tf_apply: false
 
   terraform_apply:
+    needs: terraform_plan
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
